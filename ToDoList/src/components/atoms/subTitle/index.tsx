@@ -5,7 +5,7 @@ import style from "./style"
 export default () =>{
     return (
         <SafeAreaView>
-            <Text style={style.subTitle}> TEXTO </Text>
+            <Text style={style.subTitle}> Task Progress </Text>
         </SafeAreaView>
     )
 }
