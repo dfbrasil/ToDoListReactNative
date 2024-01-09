@@ -2,8 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView, View } from 'react-native';
 import Dashboard from './src/components/atoms/title';
 import TaskProgressBoard from './src/components/molecules/taskProgressBoard';
-import CompletedTasks from './src/components/molecules/completedTasks';
-import PendingTasks from './src/components/molecules/pendingTasks';
+import CompletedTasks from './src/components/molecules/completedTasksDashboard';
+import PendingTasks from './src/components/molecules/pendingTasksDashboard';
+import SearchBar from './src/components/molecules/searchBar';
+import PendingTasksList from './src/components/molecules/pendingTasksList';
+import CompletedTasksList from './src/components/molecules/completedTasksList';
 
 
 export default function App() {
@@ -13,9 +16,12 @@ export default function App() {
       <Dashboard />
       <TaskProgressBoard />
       <View style={styles.taskStatus}>
-        <CompletedTasks />
-        <PendingTasks />
+        <CompletedTasks num={3}/>
+        <PendingTasks num={2}/>
       </View>
+      <SearchBar />
+      <PendingTasksList />
+      <CompletedTasksList />
     </SafeAreaView>
   );
 }
