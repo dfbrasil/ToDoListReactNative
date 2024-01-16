@@ -3,7 +3,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 import styles from "./styles";
 
-export default () => {
+export default function CompletedTasksList() {
     return (
         <SafeAreaView style={styles.completedTasksList}>
             <View>
