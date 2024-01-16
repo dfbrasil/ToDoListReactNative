@@ -5,8 +5,7 @@ import TaskProgressBoard from './src/components/molecules/taskProgressBoard';
 import CompletedTasks from './src/components/molecules/completedTasksDashboard';
 import PendingTasks from './src/components/molecules/pendingTasksDashboard';
 import SearchBar from './src/components/molecules/searchBar';
-import PendingTasksList from './src/components/molecules/pendingTasksList';
-import CompletedTasksList from './src/components/molecules/completedTasksList';
+import Task from './src/components/molecules/task';
 
 
 export default function App() {
@@ -20,8 +19,9 @@ export default function App() {
         <PendingTasks num={2}/>
       </View>
       <SearchBar />
-      <PendingTasksList />
-      <CompletedTasksList />
+      <Task title="Treino" subtitle="Subtítulo" active={false} />
+      <Task title="Festa" subtitle="Subtítulo" active={true} />
+      <Task title="Ensaio" subtitle="Subtítulo" active={true} />
     </SafeAreaView>
   );
 }
