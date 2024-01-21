@@ -1,21 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView, View } from 'react-native';
-import Dashboard from './src/components/atoms/title';
-import TaskProgressBoard from './src/components/molecules/taskProgressBoard';
-import CompletedTasks from './src/components/molecules/completedTasksDashboard';
-import PendingTasks from './src/components/molecules/pendingTasksDashboard';
-import SearchBar from './src/components/molecules/searchBar';
-import Task from './src/components/molecules/task';
+import TaskProgressBoard from './src/components/taskProgressBoard';
+import CompletedTasks from './src/components/completedTasksDashboard';
+import PendingTasks from './src/components/pendingTasksDashboard';
+import SearchBar from './src/components/searchBar';
+import Task from './src/components/task';
+import Title from './src/components/title';
 
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style='inverted' />
-      <Dashboard />
-      <TaskProgressBoard />
+      <Title name="Dashboard" />
+      <TaskProgressBoard numDone={1} totalTasks={2}/>
       <View style={styles.taskStatus}>
-        <CompletedTasks num={3}/>
+        <CompletedTasks num={1}/>
         <PendingTasks num={2}/>
       </View>
       <SearchBar />
