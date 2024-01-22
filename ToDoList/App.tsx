@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, SafeAreaView, View } from 'react-native';
+import { StyleSheet, SafeAreaView, View } from 'react-native';
 import TaskProgressBoard from './src/components/taskProgressBoard';
 import CompletedTasks from './src/components/completedTasksDashboard';
 import PendingTasks from './src/components/pendingTasksDashboard';
@@ -7,12 +7,15 @@ import SearchBar from './src/components/searchBar';
 import Task from './src/components/task';
 import Title from './src/components/title';
 import { useState } from 'react';
+import Routes from './src/routes';
 
 const tasksList = [
   { title: 'Treino', subtitle: 'Braços' },
   { title: 'Festa', subtitle: 'Carnaval' },
   { title: 'Treino', subtitle: 'Pernas' },
 ];
+
+
 
 export default function App() {
   const [completedTasks, setCompletedTasks] = useState(0);
@@ -29,7 +32,9 @@ export default function App() {
   };
 
   return (
+    <SafeAreaView>
     <SafeAreaView style={styles.container}>
+      <Routes />
       <StatusBar style='inverted' />
       <Title name="Dashboard" fontSize={28}/>
       <TaskProgressBoard numDone={completedTasks} totalTasks={completedTasks + pendingTasks}/>
@@ -46,21 +51,22 @@ export default function App() {
           active={false}
           onToggle={updateTaskCount}
         />
-      ))}
-    </SafeAreaView>
+        ))}
+        </SafeAreaView>
+      </SafeAreaView>
+
   );
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1, 
+    width: '100%',
+    height: '100%',
     backgroundColor: '#141325',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    padding: 27,
-    gap:12
   },
     taskStatus:{
       flexDirection:'row',
       gap:14,
     }
+
 });
