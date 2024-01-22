@@ -9,7 +9,7 @@ export default StyleSheet.create({
         paddingLeft: 60,
         paddingRight: 60,
         borderRadius: 10,
-        margin: 10,
+        margin: 2,
     },
     inactive: {
         flexDirection: 'row',
@@ -19,7 +19,7 @@ export default StyleSheet.create({
         paddingLeft: 60,
         paddingRight: 60,
         borderRadius: 10,
-        margin: 10
+        margin: 2
     },
     text: {
         marginRight: 50,

@@ -8,14 +8,18 @@ import styles from "./styles";
 interface TaskProps {
     title: string,
     subtitle: string,
-    active: boolean
+    active: boolean,
+    onToggle: (isChecked: boolean) => void;
 }
 
-const Task = ({title, subtitle, active} : TaskProps) => {
+const Task = ({ title, subtitle, active, onToggle}: TaskProps) => {
     const [isChecked, setIsChecked] = useState(active);
 
     const handleCheckboxToggle = () => {
-        setIsChecked(!isChecked);    
+        setIsChecked((prevChecked) => {
+          onToggle(!prevChecked);
+          return !prevChecked;
+        });
     };
 
     const handleTrash = () => {

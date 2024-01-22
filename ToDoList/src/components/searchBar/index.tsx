@@ -3,7 +3,7 @@ import { SafeAreaView, TextInput, TouchableOpacity, View } from "react-native"
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import style from "./style";
 
-export default () => {
+const SearchBar = () => {
     return(
         <SafeAreaView style={style.searchBar}>
             <TextInput
@@ -15,3 +15,5 @@ export default () => {
         </SafeAreaView>
     )
 }
+
+export default SearchBar;
