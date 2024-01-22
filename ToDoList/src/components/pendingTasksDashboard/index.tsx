@@ -6,10 +6,10 @@ interface PendingTasksProps {
   num: number;
 }
 
-const PendingTasks = (props : PendingTasksProps) => {
+const PendingTasks = ({num} : PendingTasksProps) => {
   return (
     <SafeAreaView style={styles.pendingTasks}>
-      <Text style={styles.pendingTasksNumber}>{props.num}</Text>
+      <Text style={styles.pendingTasksNumber}>{num}</Text>
       <Text>Pending</Text>
       <Text>Tasks</Text>
     </SafeAreaView>

@@ -9,7 +9,7 @@ interface TitleProps {
 const Title = ({name, fontSize}: TitleProps) => {
     return(
         <SafeAreaView>
-            <Text style={styles.dashboardTitle}> {name} </Text>
+            <Text style={[styles.dashboardTitle, {fontSize}]}> {name} </Text>
         </SafeAreaView>
     )
 }

@@ -6,10 +6,10 @@ interface CompletedTasksProps {
   num: number;
 }
 
-const CompletedTasks = (props : CompletedTasksProps) => {
+const CompletedTasks = ({num} : CompletedTasksProps) => {
   return (
     <SafeAreaView style={styles.completedTasks}>
-      <Text style={styles.completedTasksNumber}>{props.num}</Text>
+      <Text style={styles.completedTasksNumber}>{num}</Text>
       <Text>Completed</Text>
       <Text>Tasks</Text>
     </SafeAreaView>

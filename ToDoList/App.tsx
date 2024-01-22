@@ -12,7 +12,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style='inverted' />
-      <Title name="Dashboard" />
+      <Title name="Dashboard" fontSize={28}/>
       <TaskProgressBoard numDone={1} totalTasks={2}/>
       <View style={styles.taskStatus}>
         <CompletedTasks num={1}/>
@@ -37,6 +37,6 @@ const styles = StyleSheet.create({
   },
     taskStatus:{
       flexDirection:'row',
-      gap:11,
+      gap:14,
     }
 });
