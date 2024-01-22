@@ -1,10 +1,14 @@
 import { StyleSheet } from "react-native"
 
 export default StyleSheet.create({
-    completedTasks:{
-        backgroundColor:'#67B588',
+    pendingTasksNumber:{
+        fontSize:24,
+        fontWeight:'bold',
+    },
+    pendingTasks:{
+        backgroundColor:'#fff',
         width: '48%',
-        height: 90,
+        height:90,
         borderRadius: 10,
         justifyContent:'center',
         alignItems:'center',

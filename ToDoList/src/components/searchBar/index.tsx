@@ -1,10 +1,10 @@
 
-import { SafeAreaView, TextInput, TouchableOpacity } from "react-native"
+import { SafeAreaView, TextInput, TouchableOpacity, View } from "react-native"
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import style from "./styles";
+import style from "./style";
 
-export default function SearchBar() {
-    return (
+const SearchBar = () => {
+    return(
         <SafeAreaView style={style.searchBar}>
             <TextInput
                 placeholder="Buscar task..."
@@ -15,3 +15,5 @@ export default function SearchBar() {
         </SafeAreaView>
     )
 }
+
+export default SearchBar;
