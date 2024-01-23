@@ -1,12 +1,13 @@
 import { StyleSheet } from "react-native"
+import { theme } from '../../theme/index';
 
 export default StyleSheet.create({
     pendingTasksNumber:{
-        fontSize:24,
+        fontSize: theme.font_size.pattern,
         fontWeight:'bold',
     },
     pendingTasks:{
-        backgroundColor:'#fff',
+        backgroundColor: theme.colors.base.white,
         width: '48%',
         height:90,
         borderRadius: 10,

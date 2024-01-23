@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native"
+import { theme } from '../../theme/index';
 
 export default StyleSheet.create({
     active: {
         flexDirection: 'row',
-        backgroundColor: '#67B588',
+        backgroundColor: theme.colors.base.completedTask,
         paddingTop: 15,
         paddingBottom: 15,
         paddingLeft: 60,
@@ -13,7 +14,7 @@ export default StyleSheet.create({
     },
     inactive: {
         flexDirection: 'row',
-        backgroundColor: '#FFFCF7',
+        backgroundColor: theme.colors.base.white,
         paddingTop: 15,
         paddingBottom: 15,
         paddingLeft: 60,
@@ -21,9 +22,16 @@ export default StyleSheet.create({
         borderRadius: 10,
         margin: 2
     },
+
+    taskContainer: {
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: "space-around",
+    },
     text: {
-        marginRight: 50,
-        justifyContent: 'center'
+        marginRight: 'auto',
+        maxWidth: '50%',
+        justifyContent: 'center',
     },
     icons: {
         flexDirection: 'row',
@@ -31,13 +39,13 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
     title: {
-        fontSize: 18,
-        color: '#000000',
+        fontSize: theme.font_size.title18,
+        color: theme.colors.base.black,
         fontWeight: 'bold'
     },
     subtitle: {
-        fontSize: 12,
-        color: '#000000',
+        fontSize: theme.font_size.subtitle,
+        color: theme.colors.base.black,
         opacity: 0.5,
         fontWeight: 'bold'
     }

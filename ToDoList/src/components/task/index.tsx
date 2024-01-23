@@ -1,9 +1,8 @@
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text, View, SafeAreaView, TouchableOpacity } from "react-native";
 import { useState } from "react";
 import { CheckBox } from 'react-native-elements';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import styles from "./styles";
-
 
 interface TaskProps {
     title: string,
@@ -27,7 +26,8 @@ const Task = ({ title, subtitle, active, onToggle}: TaskProps) => {
     };
 
     return (
-         <TouchableOpacity style={isChecked ? styles.active : styles.inactive}>
+    <TouchableOpacity style={isChecked ? styles.active : styles.inactive}>
+        <SafeAreaView style={styles.taskContainer }>
          <View style={styles.text}>
              <Text style={styles.title}>{title}</Text>
              <Text style={styles.subtitle}>{subtitle}</Text>
@@ -42,6 +42,7 @@ const Task = ({ title, subtitle, active, onToggle}: TaskProps) => {
                 <FontAwesome name="trash" color="rgba(0, 0, 0, 0.50)" size={24} />
              </TouchableOpacity>
          </View>
+     </SafeAreaView>
      </TouchableOpacity>
     )
 }

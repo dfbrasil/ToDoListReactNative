@@ -1,4 +1,4 @@
-import { Text, SafeAreaView, StyleSheet } from "react-native"
+import { Text, SafeAreaView } from "react-native"
 import styles from "./styles"
 
 interface TitleProps {

@@ -6,7 +6,7 @@ const SearchBar = () => {
     return(
         <SafeAreaView style={style.searchBar}>
             <TextInput
-                placeholder="Buscar task..."
+                placeholder="Search tasks..."
              />
             <TouchableOpacity>
                 <FontAwesome name="search" color="#000" size={24} />
