@@ -26,7 +26,7 @@ export default StyleSheet.create({
     taskContainer: {
         width: '100%',
         flexDirection: 'row',
-        justifyContent: "space-around",
+        justifyContent: "space-between"
     },
     text: {
         marginRight: 'auto',
@@ -35,7 +35,6 @@ export default StyleSheet.create({
     },
     icons: {
         flexDirection: 'row',
-        marginLeft: 50,
         alignItems: 'center'
     },
     title: {

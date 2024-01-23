@@ -1,10 +1,9 @@
-import { SafeAreaView } from 'react-native';
-import { Text } from 'react-native';
-import TaskProgress from '../../components/taskProgressBoard';
+import { View, SafeAreaView } from 'react-native';
 import Task from '../../components/task';
 import { useState } from 'react';
 import SearchBar from "../../components/searchBar";
-
+import ButtonAddTask from '../../components/buttonAddTask';
+import Title from '../../components/title';
 
 import styles from "./styles";
 
@@ -29,7 +28,7 @@ export default function Home() {
   };
   return (
       <SafeAreaView style={styles.container}>
-          <Text style={styles.homeTitle}>Todo List</Text>
+          <Title name='Todo List'/>
           <SearchBar />
 
         {tasksList.map((task, index) => (
@@ -41,6 +40,9 @@ export default function Home() {
           onToggle={updateTaskCount}
           />
         ))}
+        <View style={styles.buttonContainer}>
+          <ButtonAddTask />
+        </View>
       </SafeAreaView>  
   )
 }
