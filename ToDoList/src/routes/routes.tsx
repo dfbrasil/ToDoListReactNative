@@ -1,7 +1,5 @@
-import React from 'react';
 import { createBottomTabNavigator, BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { Feather, AntDesign } from '@expo/vector-icons';
-
 import Dashboard from '../screens/Dashboard/Dashboard';
 import Home from '../screens/Home/Home';
 

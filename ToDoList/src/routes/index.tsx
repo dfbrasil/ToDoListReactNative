@@ -10,7 +10,3 @@ export default function Routes() {
     )
 
 }
-
-const styles = StyleSheet.create({
-
-})
