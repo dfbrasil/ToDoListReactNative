@@ -1,21 +1,25 @@
-import { View, SafeAreaView } from 'react-native';
+import { View, SafeAreaView, ScrollView } from 'react-native';
 import Task from '../../components/task';
 import { useState } from 'react';
 import SearchBar from "../../components/searchBar";
-import ButtonAddTask from '../../components/buttonAddTask';
 import Title from '../../components/title';
 
 import styles from "./styles";
 
-const tasksList = [
-  { title: 'Treino', subtitle: 'Braços' },
-  { title: 'Festa', subtitle: 'Carnaval' },
-  { title: 'Treino', subtitle: 'Pernas' },
+export interface TaskItem {
+  id: number,
+  title: string,
+  subtitle: string,
+} 
+
+const tasksList: TaskItem[] = [
+
+
 ];
 
 export default function Home() {
   const [completedTasks, setCompletedTasks] = useState(0);
-  const [pendingTasks, setPendingTasks] = useState(tasksList.length);
+  const [pendingTasks, setPendingTasks] = useState(0);
 
   const updateTaskCount = (isChecked: boolean) => {
     if (isChecked) {
@@ -28,21 +32,19 @@ export default function Home() {
   };
   return (
       <SafeAreaView style={styles.container}>
-          <Title name='Todo List'/>
-          <SearchBar />
-
-        {tasksList.map((task, index) => (
-        <Task
-        key={index}
-          title={task.title}
-          subtitle={task.subtitle}
-          active={false}
-          onToggle={updateTaskCount}
-          />
-        ))}
-        <View style={styles.buttonContainer}>
-          <ButtonAddTask />
-        </View>
+        <Title name='Todo List'/>
+        <SearchBar />
+        <ScrollView contentContainerStyle={styles.tasksScroll}>
+          {tasksList.map((task, index) => (
+          <Task 
+          key={index}
+            title={task.title}
+            subtitle={task.subtitle}
+            active={false}
+            onToggle={updateTaskCount}
+            />
+          ))}
+        </ScrollView>
       </SafeAreaView>  
   )
 }

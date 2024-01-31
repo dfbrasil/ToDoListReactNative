@@ -13,10 +13,7 @@ export default StyleSheet.create({
         gap:12,
         position: "relative",
     },
-    buttonContainer: {
-        position: 'absolute',
-        bottom: '5%',
-        right: '10%',
-        
+    tasksScroll: {
+        gap: 5
     },
 })

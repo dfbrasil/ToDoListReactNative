@@ -22,7 +22,6 @@ export default StyleSheet.create({
         borderRadius: 10,
         margin: 2
     },
-
     taskContainer: {
         width: '100%',
         flexDirection: 'row',
@@ -35,7 +34,8 @@ export default StyleSheet.create({
     },
     icons: {
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     title: {
         fontSize: theme.font_size.title18,
@@ -45,7 +45,7 @@ export default StyleSheet.create({
     subtitle: {
         fontSize: theme.font_size.subtitle,
         color: theme.colors.base.black,
-        opacity: 0.5,
+        opacity: 0.3,
         fontWeight: 'bold'
     }
 })

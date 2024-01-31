@@ -4,7 +4,7 @@ import { CheckBox } from 'react-native-elements';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import styles from "./styles";
 
-interface TaskProps {
+export interface TaskProps {
     title: string,
     subtitle: string,
     active: boolean,
