@@ -5,11 +5,11 @@ import Dashboard from '../screens/Dashboard/Dashboard';
 import Home from '../screens/Home/Home';
 import NewTask from '../screens/NewTask/NewTask';
 import { theme } from '../theme/index';
-
+import { Task } from '../types/types';
 
 type TabParamList = {
   Dashboard: undefined;
-  Home: undefined;
+  Home: { tasks: Task[] };
   NewTask: undefined;
 };
 
@@ -38,15 +38,17 @@ export default function TabBottomRoutes() {
         options={{
           tabBarLabel: '',
           tabBarActiveTintColor: theme.colors.base.white,
-          tabBarIcon: ({ color=theme.colors.base.white, size }) => (
-            <View style={{ 
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: theme.colors.base.green,
-              height: 60,
-              width: 60, 
-              borderRadius: 50,
-            }}>
+          tabBarIcon: ({ color = theme.colors.base.white, size }) => (
+            <View
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: theme.colors.base.green,
+                height: 60,
+                width: 60,
+                borderRadius: 50,
+              }}
+            >
               <AntDesign name="plus" size={size} color={color} />
             </View>
           ),
