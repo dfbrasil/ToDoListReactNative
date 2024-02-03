@@ -1,57 +1,29 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView, View, TouchableOpacity, TextInput, Text } from 'react-native';
-import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import { TabParamList } from '../../types/types';
-import { Feather } from '@expo/vector-icons';
+import { useTasks } from '../../hooks/useTasks';
 import Title from '../../components/title';
 import styles from './styles';
-import { theme } from '../../theme';
+import { useNavigation } from '@react-navigation/native';
 
-type BottomTabNavigation = BottomTabNavigationProp<TabParamList, 'NewTask'>;
-
-interface NewTaskProps {
-  navigation: BottomTabNavigation;
-}
-
-interface TaskItem {
-  id: number;
-  title: string;
-  subtitle: string;
-}
-
-export default function NewTask({ navigation }: NewTaskProps) {
+export default function NewTask() {
+  const navigation = useNavigation();
+  const { addNewTask } = useTasks();
   const [title, setTitle] = useState('');
   const [subtitle, setSubtitle] = useState('');
-  const [tasks, setTasks] = useState<TaskItem[]>([]);
 
-  const handleGoBack = () => {
-    navigation.goBack();
-  };
-
-  const addTask = () => {
+  const handleAddTask = () => {
     if (title && subtitle) {
-      const newTask: TaskItem = {
-        id: tasks.length + 1,
-        title: title,
-        subtitle: subtitle,
-      };
-      const updatedTasks = [...tasks, newTask];
-      setTasks(updatedTasks);
+      addNewTask({ title, subtitle });
       setTitle('');
       setSubtitle('');
-
-      navigation.navigate('Home', { tasks: updatedTasks });
+      navigation.navigate('Home' as never);
     }
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <TouchableOpacity style={styles.backContent} onPress={handleGoBack}>
-          <Feather name="arrow-left" size={26} color="white" />
-          <Text style={{ color: 'white', fontSize: theme.font_size.pattern14 }}>Voltar</Text>
-        </TouchableOpacity>
-        <Title name="New Task" />
+        <Title name='New Task' />
       </View>
       <View style={styles.inputContent}>
         <TextInput
@@ -66,7 +38,7 @@ export default function NewTask({ navigation }: NewTaskProps) {
           value={subtitle}
           onChangeText={setSubtitle}
         />
-        <TouchableOpacity style={styles.customButtom} onPress={addTask}>
+        <TouchableOpacity style={styles.customButtom} onPress={handleAddTask}>
           <Text style={styles.textButton}>Create</Text>
         </TouchableOpacity>
       </View>

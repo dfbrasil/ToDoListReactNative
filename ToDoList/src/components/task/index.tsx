@@ -1,51 +1,43 @@
-import { useState } from 'react';
-import { View, SafeAreaView, TouchableOpacity, Text } from 'react-native';
-import { CheckBox } from 'react-native-elements';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
+import { CheckBox } from "react-native-elements";
+import { useTasks } from "../../hooks/useTasks";
 import styles from "./styles";
 
-export interface TaskProps {
-    id: number;
-    title: string;
-    subtitle: string;
-    active: boolean;
-    onToggle: (isChecked: boolean) => void;
+interface TaskProps {
+  title: string;
+  subtitle: string;
+  active: boolean;
+  id: number;
 }
 
-const Task = ({ id, title, subtitle, active, onToggle }: TaskProps) => {
-    const [isChecked, setIsChecked] = useState(active);
+const Task = ({ title, subtitle, id, active }: TaskProps) => {
+  const { removeTask, updateTask } = useTasks();
 
-    const handleCheckboxToggle = () => {
-        setIsChecked(prevChecked => {
-            onToggle(!prevChecked);
-            return !prevChecked;
-        });
-    };
+  const handleCheckboxToggle = () => {
+    updateTask({ title, subtitle, active: !active, id });
+  };
 
-    const handleTrash = () => {
-        console.warn('Clicked on the trash')
-    };
-
-    return (
-        <TouchableOpacity style={isChecked ? styles.active : styles.inactive}>
-            <SafeAreaView style={styles.taskContainer}>
-                <View style={styles.text}>
-                    <Text style={styles.title}>{title}</Text>
-                    <Text style={styles.subtitle}>{subtitle}</Text>
-                </View>
-                <View style={styles.icons}>
-                    <CheckBox
-                        checked={isChecked}
-                        checkedColor="green"
-                        onPress={handleCheckboxToggle}
-                    />
-                    <TouchableOpacity onPress={handleTrash}>
-                        <FontAwesome name="trash" color="rgba(0, 0, 0, 0.50)" size={24} />
-                    </TouchableOpacity>
-                </View>
-            </SafeAreaView>
-        </TouchableOpacity>
-    );
-}
+  return (
+    <TouchableOpacity style={active ? styles.active : styles.inactive}>
+      <SafeAreaView style={styles.taskContainer}>
+        <View style={styles.text}>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.subtitle}>{subtitle}</Text>
+        </View>
+        <View style={styles.icons}>
+          <CheckBox
+            checked={active}
+            checkedColor="green"
+            onPress={handleCheckboxToggle}
+          />
+          <TouchableOpacity onPress={() => removeTask(id)}>
+            <FontAwesome name="trash" color="rgba(0, 0, 0, 0.50)" size={24} />
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    </TouchableOpacity>
+  );
+};
 
 export default Task;
