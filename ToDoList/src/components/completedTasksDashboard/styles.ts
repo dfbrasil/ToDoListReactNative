@@ -1,8 +1,9 @@
 import { StyleSheet } from "react-native"
 import { theme } from '../../theme/index';
+
 export default StyleSheet.create({
     completedTasksNumber:{
-        fontSize:theme.font_size.pattern,
+        fontSize:theme.font_size.pattern24,
         fontWeight:'bold',
     },
     completedTasks:{

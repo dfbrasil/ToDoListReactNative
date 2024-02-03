@@ -7,8 +7,8 @@ export default StyleSheet.create({
         backgroundColor: theme.colors.base.completedTask,
         paddingTop: 15,
         paddingBottom: 15,
-        paddingLeft: 60,
-        paddingRight: 60,
+        paddingLeft: 30,
+        paddingRight: 30,
         borderRadius: 10,
         margin: 2,
     },
@@ -17,8 +17,8 @@ export default StyleSheet.create({
         backgroundColor: theme.colors.base.white,
         paddingTop: 15,
         paddingBottom: 15,
-        paddingLeft: 60,
-        paddingRight: 60,
+        paddingLeft: 30,
+        paddingRight: 30,
         borderRadius: 10,
         margin: 2
     },
@@ -27,7 +27,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: "space-between"
     },
-    text: {
+    textTask: {
         marginRight: 'auto',
         maxWidth: '50%',
         justifyContent: 'center',
@@ -35,7 +35,8 @@ export default StyleSheet.create({
     icons: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginLeft: 50,
     },
     title: {
         fontSize: theme.font_size.title18,

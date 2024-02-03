@@ -9,7 +9,7 @@ export default StyleSheet.create({
         fontWeight:'bold',
     },
     taskDone:{
-        fontSize: theme.font_size.subtitle,
+        fontSize: theme.font_size.pattern14,
         color: theme.colors.base.black,
     },
 

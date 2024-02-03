@@ -3,7 +3,7 @@ import { theme } from '../../theme/index';
 
 export default StyleSheet.create({
     pendingTasksNumber:{
-        fontSize: theme.font_size.pattern,
+        fontSize: theme.font_size.pattern24,
         fontWeight:'bold',
     },
     pendingTasks:{
