@@ -1,46 +1,27 @@
-import { SafeAreaView } from 'react-native';
-import { Text } from 'react-native';
-import TaskProgress from '../../components/taskProgressBoard';
-import Task from '../../components/task';
-import { useState } from 'react';
+import { SafeAreaView, Text, TouchableOpacity, ScrollView} from "react-native";
 import SearchBar from "../../components/searchBar";
-
-
+import Task from "../../components/task";
+import Title from "../../components/title";
+import { useTasks } from "../../hooks/useTasks";
 import styles from "./styles";
 
-const tasksList = [
-  { title: 'Treino', subtitle: 'Braços' },
-  { title: 'Festa', subtitle: 'Carnaval' },
-  { title: 'Treino', subtitle: 'Pernas' },
-];
-
 export default function Home() {
-  const [completedTasks, setCompletedTasks] = useState(0);
-  const [pendingTasks, setPendingTasks] = useState(tasksList.length);
-
-  const updateTaskCount = (isChecked: boolean) => {
-    if (isChecked) {
-      setCompletedTasks((prevCount) => prevCount + 1);
-      setPendingTasks((prevCount) => Math.max(0, prevCount - 1)); 
-    } else {
-      setCompletedTasks((prevCount) => Math.max(0, prevCount - 1));
-      setPendingTasks((prevCount) => prevCount + 1);
-    }
-  };
+  const { tasks, addNewTask } = useTasks();
   return (
-      <SafeAreaView style={styles.container}>
-          <Text style={styles.homeTitle}>Todo List</Text>
-          <SearchBar />
-
-        {tasksList.map((task, index) => (
+    <SafeAreaView style={styles.container}>
+      <Title name="Todo List"/>
+      <SearchBar />
+      <ScrollView contentContainerStyle={styles.tasksScroll}>
+      {tasks.map((task) => (
         <Task
-        key={index}
+          key={task.id}
+          id={task.id}
           title={task.title}
           subtitle={task.subtitle}
-          active={false}
-          onToggle={updateTaskCount}
-          />
-        ))}
-      </SafeAreaView>  
-  )
+          active={task.active}
+        />
+      ))}
+    </ScrollView>
+    </SafeAreaView>
+  );
 }

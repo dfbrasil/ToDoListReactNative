@@ -22,11 +22,10 @@ export default StyleSheet.create({
         borderRadius: 10,
         margin: 2
     },
-
     taskContainer: {
         width: '100%',
         flexDirection: 'row',
-        justifyContent: "space-around",
+        justifyContent: "space-between"
     },
     text: {
         marginRight: 'auto',
@@ -35,8 +34,8 @@ export default StyleSheet.create({
     },
     icons: {
         flexDirection: 'row',
-        marginLeft: 50,
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     title: {
         fontSize: theme.font_size.title18,
@@ -46,7 +45,7 @@ export default StyleSheet.create({
     subtitle: {
         fontSize: theme.font_size.subtitle,
         color: theme.colors.base.black,
-        opacity: 0.5,
+        opacity: 0.3,
         fontWeight: 'bold'
     }
 })
