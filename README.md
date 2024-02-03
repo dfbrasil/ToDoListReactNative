@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-Este é um aplicativo simples de lista de tarefas desenvolvido em React Native usando o Expo. Ele permite aos usuários adicionar, remover e atualizar tarefas em uma lista de afazeres.
+Este é um aplicativo simples de lista de tarefas desenvolvido em React Native usando o Expo. Ele permite aos usuários visualizar o dashboard de taredas e adicionar, remover e marcar como concluída tarefas em na lista de tarefas.
 
 ## Tecnologias Utilizadas
 
