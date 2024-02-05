@@ -19,7 +19,7 @@ const Task = ({ title, subtitle, id, active }: TaskProps) => {
   };
 
   return (
-    <TouchableOpacity style={active ? styles.active : styles.inactive}>
+    <SafeAreaView style={active ? styles.active : styles.inactive}>
       <SafeAreaView style={styles.taskContainer}>
         <View style={styles.textTask}>
           <Text style={styles.title}>{title}</Text>
@@ -36,7 +36,7 @@ const Task = ({ title, subtitle, id, active }: TaskProps) => {
           </TouchableOpacity>
         </View>
       </SafeAreaView>
-    </TouchableOpacity>
+    </SafeAreaView>
   );
 };
 
