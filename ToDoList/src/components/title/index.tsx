@@ -1,15 +1,14 @@
-import { Text, SafeAreaView, StyleSheet } from "react-native"
+import { Text, SafeAreaView } from "react-native"
 import styles from "./styles"
 
 interface TitleProps {
-    name: string;
-    fontSize?: number; 
+    name: string; 
 }
 
-const Title = ({name, fontSize}: TitleProps) => {
+const Title = ({name}: TitleProps) => {
     return(
         <SafeAreaView>
-            <Text style={[styles.dashboardTitle, {fontSize}]}> {name} </Text>
+            <Text style={[styles.dashboardTitle,]}> {name} </Text>
         </SafeAreaView>
     )
 }

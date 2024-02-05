@@ -1,13 +1,12 @@
-
 import { SafeAreaView, TextInput, TouchableOpacity, View } from "react-native"
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import style from "./style";
+import style from "./styles";
 
 const SearchBar = () => {
     return(
         <SafeAreaView style={style.searchBar}>
             <TextInput
-                placeholder="Buscar task..."
+                placeholder="Search tasks..."
              />
             <TouchableOpacity>
                 <FontAwesome name="search" color="#000" size={24} />

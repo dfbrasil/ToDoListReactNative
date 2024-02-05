@@ -1,44 +1,52 @@
 import { StyleSheet } from "react-native"
+import { theme } from '../../theme/index';
 
 export default StyleSheet.create({
     active: {
         flexDirection: 'row',
-        backgroundColor: '#67B588',
+        backgroundColor: theme.colors.base.completedTask,
         paddingTop: 15,
         paddingBottom: 15,
-        paddingLeft: 60,
-        paddingRight: 60,
+        paddingLeft: 30,
+        paddingRight: 30,
         borderRadius: 10,
         margin: 2,
     },
     inactive: {
         flexDirection: 'row',
-        backgroundColor: '#FFFCF7',
+        backgroundColor: theme.colors.base.white,
         paddingTop: 15,
         paddingBottom: 15,
-        paddingLeft: 60,
-        paddingRight: 60,
+        paddingLeft: 30,
+        paddingRight: 30,
         borderRadius: 10,
         margin: 2
     },
-    text: {
-        marginRight: 50,
-        justifyContent: 'center'
+    taskContainer: {
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: "space-between"
+    },
+    textTask: {
+        marginRight: 'auto',
+        maxWidth: '50%',
+        justifyContent: 'center',
     },
     icons: {
         flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
         marginLeft: 50,
-        alignItems: 'center'
     },
     title: {
-        fontSize: 18,
-        color: '#000000',
+        fontSize: theme.font_size.title18,
+        color: theme.colors.base.black,
         fontWeight: 'bold'
     },
     subtitle: {
-        fontSize: 12,
-        color: '#000000',
-        opacity: 0.5,
+        fontSize: theme.font_size.subtitle,
+        color: theme.colors.base.black,
+        opacity: 0.3,
         fontWeight: 'bold'
     }
 })
